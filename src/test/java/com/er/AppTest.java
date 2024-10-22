@@ -38,14 +38,18 @@ public static void main(String[] args) throws Exception {
 	String path = captureScreenShot("Google.jpg");
 	
 	
-	//selenium: 3 formats to capture SS, byteArray, base64kjuhhgffgt, 
+	//selenium: 3 formats to capture SS, byteArray, base64k 
 	report.createTest("Screnshot Test 1", "This is for attaching the screenshot to the test at test level")
 	.info("This is a info Message")
 	.addScreenCaptureFromBase64String(base64Code);
 	
 	report.createTest("Screnshot Test 2", "This is for attaching the screenshot to the test at test level")
 	.info("This is a info Message")
-	.addScreenCaptureFromBase64String(base64Code, "Google homepage");
+	.addScreenCaptureFromBase64String(base64Code, "Google homepage1")
+	.addScreenCaptureFromBase64String(base64Code, "Google homepage2")
+	.addScreenCaptureFromBase64String(base64Code, "Google homepage3")
+	.addScreenCaptureFromBase64String(base64Code, "Google homepage3");
+	
 	
 	
 	report.createTest("Screnshot Test 3", "This is for attaching the screenshot to the test at test level")
@@ -54,7 +58,10 @@ public static void main(String[] args) throws Exception {
 	
 	report.createTest("Screnshot Test 4", "This is for attaching the screenshot to the test at test level")
 	.info("This is a info Message")
-	.addScreenCaptureFromPath(path, "Google HomePage");
+	.addScreenCaptureFromPath(path, "Google HomePage1")
+	.addScreenCaptureFromPath(path, "Google HomePage2")
+	.addScreenCaptureFromPath(path, "Google HomePage3")
+	.addScreenCaptureFromPath(path, "Google HomePage4");
 	
 	report.flush();
 	Desktop.getDesktop().browse(new File("report.html").toURI());
